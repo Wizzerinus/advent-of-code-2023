@@ -1,15 +1,12 @@
 def parse(x):
     gn, gd = x.split(": ")
     games = gd.split("; ")
-    bad = False
     mins = {"red": 0, "green": 0, "blue": 0}
     for g in games:
         for c in g.split(", "):
             count, color = c.split()
             count = int(count)
             mins[color] = max(mins[color], count)
-        if bad:
-            break
     return mins["red"] * mins["green"] * mins["blue"]
 
 
