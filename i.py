@@ -11,7 +11,7 @@ def interpolate(row, target_x=None):
                 continue
             prod *= (target_x - id2) / (idx - id2)
         total += prod
-    return total
+    return round(total)
 
 
 with open("i-input.txt") as f:
