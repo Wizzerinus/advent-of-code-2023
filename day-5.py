@@ -78,5 +78,5 @@ def find_double_range_location(data):
 
 with open("e-input.txt") as f:
     data = f.read()
-    # print(find_location(data))
+    print(find_location(data))
     print(find_double_range_location(data))

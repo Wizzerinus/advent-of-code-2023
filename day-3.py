@@ -42,8 +42,6 @@ def parse_first(line, index, data):
     for start, end, value in current_numbers:
         if any(valid(data, index + k, start - 1, end + 1) for k in range(-1, 2)):
             summ += value
-        else:
-            print("invalid", value)
     return summ
 
 
@@ -69,4 +67,5 @@ def find_gears(data):
 
 with open("c-input.txt") as f:
     data = f.readlines()
+    print(sum(parse_first(line, index, data) for index, line in enumerate(data)))
     print(find_gears(data))

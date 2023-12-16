@@ -36,7 +36,7 @@ def lcm(numbers):
 def parse_second(node_map, instruction):
     all_starts = [x for x in node_map if x.endswith("A")]
     all_counts = [parse_first(node_map, instruction, x, lambda t: t.endswith("Z")) for x in all_starts]
-    return lcm(all_counts)
+    return round(lcm(all_counts))
 
 
 with open("h-input.txt") as f:

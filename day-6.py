@@ -24,4 +24,6 @@ def parse(time_line, distance_line, one_race=False):
 
 
 with open("f-input.txt") as f:
-    print(parse(*f.readlines(), one_race=True))
+    lines = f.readlines()
+    print(parse(*lines, one_race=False))
+    print(parse(*lines, one_race=True))

@@ -21,9 +21,9 @@ def replace_letters(s):
     return s
 
 
-def parse(x):
-    x = replace_letters(x)
-    # print(x)
+def parse(x, replace=False):
+    if replace:
+        x = replace_letters(x)
     d = first_digit(x)
     e = first_digit(x[::-1])
     return int(d + e)
@@ -32,3 +32,4 @@ def parse(x):
 with open("a-input.txt") as f:
     data = f.readlines()
     print(sum(parse(x) for x in data))
+    print(sum(parse(x, replace=True) for x in data))
